@@ -48,6 +48,17 @@ document.addEventListener('click', (e) => {  // Close mobile menu when clicking 
     }
 });
 
+window.addEventListener('scroll', () => {  // Close mobile menu on scroll
+    menu.classList.remove('active');
+    navigation.classList.remove('active');
+});
+
+// Close menu when back button is pressed (for mobile browsers)
+window.addEventListener('popstate', () => {
+    menu.classList.remove('active');
+    navigation.classList.remove('active');
+});
+
 // Smooth scrolling for navigation links
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
